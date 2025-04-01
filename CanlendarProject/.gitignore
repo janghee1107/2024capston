@@ -36,5 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-# node_modules 폴더 제외
+### node_modules 폴더 제외 ###
 CalendarProject/client/node_modules/

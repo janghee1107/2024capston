@@ -1,0 +1,34 @@
+.header-name {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px; /* 모서리 둥글게 설정 */
+    display: flex; /* 내용 정렬을 위해 flex 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: space-between; /* 좌우 정렬 */
+    font-size: 20px; /* 글자 크기 설정 */
+    color: #333; /* 글자 색상 설정 */
+}
+
+.header-name span {
+    font-weight: bold; /* 사용자 이름을 굵게 설정 */
+}
+
+.header-name button {
+  font-size: 16px;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 5px;
+}
+
+.header-name button:hover {
+    background-color: #f8f8f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

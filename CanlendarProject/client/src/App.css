@@ -1,0 +1,325 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 전체 메뉴 스타일 */
+#menu-navi {
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between; /* 좌우로 버튼과 테마를 벌림 */
+  width: 100%;  
+}
+
+/* 버튼들과 날짜 범위를 포함하는 그룹 */
+#menu-navi .calendar-buttons {
+  display: flex;  
+  justify-content: flex-start;  
+  gap: 20px;  
+  align-items: center; /* 수직 정렬 추가 */
+}
+
+/* 날짜 범위 텍스트 스타일 */
+.calendar-render-range {
+  font-size: 30px; /* 날짜 텍스트 크기 */
+  color: #333; /* 텍스트 색상 */
+  position: absolute; /* 절대 위치로 설정 */
+  left: 50%; /* 왼쪽 기준으로 50% 이동 */
+  transform: translateX(-50%); /* 중앙으로 정렬 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 각 버튼에 스타일을 추가 */
+#menu-navi button {
+  font-size: 16px;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 5px;
+}
+
+#menu-navi button:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 아이콘과 텍스트 간의 간격 조정 */
+#menu-navi button i.calendar-icon {
+  margin-right: 8px;
+}
+
+/* Today 버튼 스타일 */
+.calendar-move-today {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 3px; 
+}
+
+.calendar-move-today:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 화살표 버튼 크기 조정 */
+.calendar-move-day i {
+  font-size: 20px;
+}
+
+/* 캘린더 상단의 버튼 및 텍스트 배치 조정 */
+#menu-navi .calendar-move-day {
+  font-size: 18px;
+}
+
+
+#calendarMenu {
+  display: flex; /* 플렉스 박스 설정 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: space-between; /* 날짜 범위와 테마 선택 간격 벌리기 */
+  margin-bottom: 20px; /* 캘린더와의 간격 */
+}
+
+#menu-navi {
+  display: flex;  
+  align-items: center;  
+  justify-content: flex-start; 
+  width: auto;  
+}
+
+
+.calendar-view-buttons {
+  display: flex; /* 플렉스 박스 설정 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin-left: 5px; /* 왼쪽 여백 */
+  margin-bottom: 30px;
+}
+
+.calendar-view-buttons .calendar-btn {
+  font-size: 16px; /* 버튼 텍스트 크기 */
+  padding: 10px 15px; /* 버튼 패딩 */
+  background-color: #ffffff; /* 배경색 */
+  border: 2px solid #ccc; /* 테두리 */
+  border-radius: 50px; /* 둥근 모서리 */
+  cursor: pointer; /* 커서 모양 */
+  display: inline-flex; /* 인라인 플렉스 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  margin-right: 10px; /* 버튼 간 간격 */
+  transition: background-color 0.3s ease-in-out; /* 배경색 전환 효과 */
+}
+
+.calendar-view-buttons .calendar-btn:hover {
+  background-color: #f8f8f8; /* 호버 시 배경색 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 효과 */
+}
+
+/* 테마 변경 */
+/* 기본 캘린더 레이아웃 */
+.calendar-container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* 캘린더 제목 스타일 */
+.calendar-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 테마 선택 드롭다운 스타일 */
+.theme-selector {
+  margin-left: auto; /* 테마 선택을 오른쪽으로 정렬 */
+}
+
+.theme-selector label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.theme-selector select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* 테마 색상 */
+.theme-red {
+  background-color: #ffdddd;
+}
+
+.theme-orange {
+  background-color: #ffe5cc;
+}
+
+.theme-yellow {
+  background-color: #fff8cc;
+}
+
+.theme-green {
+  background-color: #ddffdd;
+}
+
+.theme-blue {
+  background-color: #ddeeff;
+}
+
+.theme-indigo {
+  background-color: #e6ddff;
+}
+
+.theme-violet {
+  background-color: #f5ddff;
+}
+
+
+.toastui-calendar-template-milestoneTitle {
+  font-size: 14px !important; /* 글자 크기를 원하는 크기로 설정 */
+  font-weight: bold; /* 글자를 굵게 표시 (필요 시) */
+  color: #333; /* 색상을 변경하고 싶다면 설정 */
+}
+
+.toastui-calendar-template-taskTitle {
+  font-size: 14px !important; /* 글자 크기를 원하는 크기로 설정 */
+  font-weight: bold; /* 글자를 굵게 표시 (필요 시) */
+  color: #333; /* 색상을 변경하고 싶다면 설정 */
+}
+
+.toastui-calendar-template-alldayTitle {
+  font-size: 14px !important; /* 글자 크기를 원하는 크기로 설정 */
+  font-weight: bold; /* 글자를 굵게 표시 (필요 시) */
+  color: #333; /* 색상을 변경하고 싶다면 설정 */
+}
+
+
+/* 공통 스타일 */
+.toastui-calendar-template-time {
+  font-weight: bold; /* 글자 굵기 */
+  color: #333; /* 텍스트 색상 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* 월별 뷰에서의 스타일 */
+.toastui-calendar-month .toastui-calendar-template-time {
+  font-size: 100% !important; /* 월별 뷰 글씨 크기 */
+}
+
+/* 주별 뷰에서의 스타일 */
+.toastui-calendar-week-view .toastui-calendar-template-time {
+  font-size: 110% !important; /* 주별 뷰 글씨 크기 */
+}
+
+/* 일별 뷰에서의 스타일 */
+.toastui-calendar-day-view .toastui-calendar-template-time {
+  font-size: 140% !important; /* 일별 뷰 글씨 크기 */
+}
+
+
+/* 공통 스타일 */
+.toastui-calendar-weekday-event-title {
+  font-size: 17px !important; /* 기본 글자 크기 */
+  font-weight: bold; /* 글자를 굵게 표시 */
+  color: black; /* 기본 글자 색상 */
+}
+
+/* 월별 뷰에서의 스타일 */
+.toastui-calendar-month .toastui-calendar-weekday-event-title {
+  font-size: 120% !important; /* 월별 뷰에서의 글자 크기 */
+}
+
+/* 주별 뷰에서의 스타일 */
+.toastui-calendar-week-view .toastui-calendar-weekday-event-title {
+  font-size: 17px !important; /* 주별 뷰에서의 글자 크기 */
+}
+
+/* 일별 뷰에서의 스타일 */
+.toastui-calendar-day-view .toastui-calendar-weekday-event-title {
+  font-size: 20px !important; /* 일별 뷰에서의 글자 크기 */
+}
+
+
+.toastui-calendar-weekday-event {
+  line-height: 24px !important;
+  height: 24px !important;
+}
+
+.toastui-calendar-template-monthDayName {
+  font-size: 17px;
+  text-align: center;
+}
+
+.toastui-calendar-holiday-sat {
+  color: blue !important;
+}
+
+.toastui-calendar-daygrid-cell[style*="left: 85.7143%"] .toastui-calendar-grid-cell-date {
+  color: blue !important; /* 파란색으로 설정 */
+}
+
+.toastui-calendar-template-timegridDisplayPrimaryTime {
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+
+.toastui-calendar-template-timegridNowIndicatorLabel {
+  font-weight: bold !important;
+  font-size: 17px !important;
+}

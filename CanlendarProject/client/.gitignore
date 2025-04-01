@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### node_modules 폴더 제외 ###
-CalendarProject/client/node_modules/
+node_modules/

@@ -1,4 +1,4 @@
-<h1>SoccerWorld</h1>
+<h1>luckyseven</h1>
 안녕하세요 tui.calendar 라이브러리를 활용한 개인 일정 관리 웹 애플리케이션입니다!<br>
 
 <h2>회원가입 및 로그인</h2>
